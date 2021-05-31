@@ -8,10 +8,11 @@
 </style>
 
 <script>
+import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to the homepage!",
+      message: "Welcome to template!",
     };
   },
   created: function () {},
