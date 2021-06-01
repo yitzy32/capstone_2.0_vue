@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import PantryItemsIndex from "../views/PantryItemsIndex.vue";
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/logout",
     name: "logout",
     component: Logout
+  },
+  {
+    path: "/pantry_items",
+    name: "pantry_items",
+    component: PantryItemsIndex
   },
   {
     path: '/about',
