@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <a href="/pantry_items/new">Add an item to your pantry</a>
     <p v-for="pantryItem in pantryItems">
       {{pantryItem.name}}
       {{pantryItem.starting_amount}}
