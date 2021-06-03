@@ -3,7 +3,9 @@
     <h1>{{ message }}</h1>
     <div v-for="recipe in recipes">
       <h2>{{ recipe.title }}</h2> <br>
-      <img v-bind:src="recipe.image" alt="" :height="300">
+      <img v-bind:src="recipe.image" alt="" :height="300"> <br>
+      <router-link v-bind:to="`/recipes/${recipe.id}`">More details</router-link>
+      <!-- <button v-on:click="viewRecipe()">View Recipe in Detail</button> -->
       <hr> 
     </div>
   </div>
