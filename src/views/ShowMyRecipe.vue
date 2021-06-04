@@ -14,6 +14,7 @@
       <p>Servings: {{ recipe.servings }}</p>
       Source Name: <a v-bind:href="recipe.source_url">{{ recipe.source_name }}</a>
       <p v-html="recipe.summary">Summary: {{ recipe.summary }}</p>
+      <button v-on:click="makeRecipe()">Make this Recipe</button>
     </div>
   </div>
 </template>
@@ -38,6 +39,13 @@ export default {
       this.recipe = response.data;
     });
   },
-  methods: {},
+  methods: {
+    makeRecipe: function () {
+      console.log("making recipe....");
+      axios.patch("/api/recipes/" + this.$route.params.id).then((response) => {
+        console.log(response.data);
+      });
+    },
+  },
 };
 </script>

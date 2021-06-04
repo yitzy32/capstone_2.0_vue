@@ -4,7 +4,7 @@
     <a href="/pantry_items/new">Add an item to your pantry</a>
     <p v-for="pantryItem in pantryItems">
       {{pantryItem.name}}
-      {{pantryItem.starting_amount}}
+      {{pantryItem.current_amount}}
       {{pantryItem.unit}}
       <br>
       <img v-bind:src="pantryItem.image" :height="100">

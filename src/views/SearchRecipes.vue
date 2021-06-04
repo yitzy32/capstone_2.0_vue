@@ -21,7 +21,7 @@
         Servings: {{ currentRecipe.servings }} <br>
         <a v-bind:href="currentRecipe.source_url">{{ currentRecipe.source_name }}</a> <br>
         <img v-bind:src="currentRecipe.image" alt="" :height="200"><br>
-        Summary: {{ currentRecipe.summary }} <br>
+        <p v-html="currentRecipe.summary">Summary: {{ currentRecipe.summary }}</p>
         <button v-on:click="saveRecipe()">Save This Recipe</button>
         <button>Close</button>
       </form>
