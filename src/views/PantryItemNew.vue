@@ -54,6 +54,7 @@ export default {
       };
       axios.post("/api/pantry_items", params).then((response) => {
         console.log(response.data);
+        this.$router.push("/pantry_items");
       });
     },
   },

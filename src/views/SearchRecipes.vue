@@ -92,6 +92,7 @@ export default {
       };
       axios.post("/api/search_recipes", params).then((response) => {
         console.log(response.data);
+        this.$router.push("/recipes");
       });
     },
   },

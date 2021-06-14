@@ -9,6 +9,7 @@ import PantryItemNew from "../views/PantryItemNew.vue";
 import SearchRecipes from "../views/SearchRecipes.vue";
 import MyRecipes from "../views/MyRecipes.vue";
 import ShowMyRecipe from "../views/ShowMyRecipe.vue";
+import ShoppingList from "../views/ShoppingList.vue";
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: "/recipes/:id",
     name: "my-recipes-show",
     component: ShowMyRecipe
+  },
+  {
+    path: "/shopping_list",
+    name: "shopping_list",
+    component: ShoppingList
   },
   {
     path: '/about',

@@ -8,7 +8,8 @@
       <router-link to="/logout">Logout</router-link> |
       <router-link to="/search_recipes">Search Recipes</router-link> |
       <router-link to="/recipes">My Recipes</router-link> |
-      <router-link to="/pantry_items">Pantry Items</router-link>
+      <router-link to="/pantry_items">Pantry Items</router-link> |
+      <router-link to="/shopping_list">Shopping List</router-link>
     </div>
     <router-view/>
   </div>
