@@ -6,10 +6,9 @@
       {{ item.amount }}
       {{ item.unit }}
     </p>
-    <!-- <p>Name: <input type="text" v-model="newName"></p> -->
     <p> Name
       <select v-model="newName" id="">
-        <option v-for="ingredient in ingredients">{{ingredient.name}}</option>
+        <option v-for="item in pantry_items">{{item.name}}</option>
       </select>
     </p>
     <p> Unit
@@ -18,12 +17,14 @@
           <option>Tablespoons</option>
           <option>Teaspoons</option>
           <option>Ounces</option>
+          <option>Pounds</option>
         </select>
       </p>
     <p>
       Amount: <input type="text" v-model="newAmount">
     </p>
     <button v-on:click="addItem">Add Item</button>
+    <button v-on:click="boughtList">Bought this list</button>
   </div>
 </template>
 
@@ -37,7 +38,7 @@ export default {
     return {
       message: "Shopping List",
       shoppingList: [],
-      ingredients: [],
+      pantry_items: [],
       newName: "",
       newUnit: "",
       newAmount: "",
@@ -50,9 +51,9 @@ export default {
       this.shoppingList = response.data;
     });
 
-    axios.get("/api/ingredients").then((response) => {
+    axios.get("/api/pantry_items").then((response) => {
       console.log(response.data);
-      this.ingredients = response.data;
+      this.pantry_items = response.data;
     });
   },
   methods: {
@@ -65,6 +66,13 @@ export default {
       };
       axios.post("/api/shopping_list", params).then((response) => {
         console.log(response.data);
+        this.$router.go(); // reloads page
+      });
+    },
+    boughtList: function () {
+      axios.patch("/api/pantry_items").then((response) => {
+        console.log(response.data);
+        this.$router.push("/pantry_items");
       });
     },
   },
